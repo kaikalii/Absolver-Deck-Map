@@ -2,6 +2,7 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <cmath>
+#include <sstream>
 #include "utility.h"
 
 using namespace std;
@@ -20,6 +21,16 @@ sf::Vector2i scaleVector(const sf::Vector2i& pos_ratio, const sf::Vector2u& imag
 int fixIndex(int i) {
     if(i == 0) return 0;
     else return 4-i;
+}
+vector<string> split(const string &s, char delim) {
+    vector<string> elems;
+    stringstream ss;
+    ss.str(s);
+    string item;
+    while (getline(ss, item, delim)) {
+        elems.push_back(item);
+    }
+    return elems;
 }
 
 ThickLine::ThickLine() {
