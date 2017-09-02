@@ -18,49 +18,49 @@ int main(int argc, char **argv) {
     vector<Move> moves;
     sf::Vector2i Move_dim(128,128);
     float angle = -PI/2.f + PI/16.f;
-    float dist_from_center = 600;
-    sf::Vector2f output_size(1400,1400);
+    sf::Vector2f output_size(2133,1200);
+    sf::Vector2f dist_from_center = output_size/2.f*4.f/5.f;
 
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(238,287), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(238,287), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f;
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(421,287), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(421,287), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f;
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(604,287), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(604,287), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f;
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(1492,287), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(1492,287), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f + PI;
     cout << endl;
 
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(238,430), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(238,430), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f;
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(421,430), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(421,430), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f;
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(604,430), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(604,430), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f;
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(1492,430), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(1492,430), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f + PI;
     cout << endl;
 
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(238,573), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(238,573), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f;
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(421,573), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(421,573), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f;
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(604,573), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(604,573), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f;
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(1492,573), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(1492,573), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f + PI;
     cout << endl;
 
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(238,716), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(238,716), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f;
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(421,716), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(421,716), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f;
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(604,716), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(604,716), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
     angle += PI/8.f;
-    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(1492,716), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center*cos(angle), dist_from_center*sin(angle))));
+    moves.push_back(Move(screenshot, sf::IntRect(sf::Vector2i(1492,716), Move_dim), output_size/2.f + sf::Vector2f(dist_from_center.x*cos(angle), dist_from_center.y*sin(angle))));
 
     // Create stance markers
-    vector<sf::RectangleShape> stances(4, sf::RectangleShape(output_size/20.f));
+    vector<sf::RectangleShape> stances(4, sf::RectangleShape(min(output_size.x, output_size.y)*sf::Vector2f(1,1)/20.f));
     for(auto &st: stances) {
         st.setFillColor(sf::Color::Black);
         st.setOutlineColor(sf::Color::White);
@@ -68,13 +68,24 @@ int main(int argc, char **argv) {
         st.setOrigin(st.getSize()/2.f);
         st.rotate(45);
     }
-    float pratio = 3.f/7.f;
+    float pratio = 0.37f;
     sf::Vector2f tlp = pratio * output_size;
     sf::Vector2f brp = (1.f - pratio) * output_size;
     stances[0].setPosition(brp.x, tlp.y);
     stances[1].setPosition(brp.x, brp.y);
     stances[2].setPosition(tlp.x, brp.y);
     stances[3].setPosition(tlp.x, tlp.y);
+    // Create stance direction indicators
+    vector<sf::CircleShape> stance_dirs(4);
+    for(auto &sd: stance_dirs) {
+        sd.setFillColor(sf::Color::White);
+        sd.setRadius(min(output_size.x, output_size.y)/80.f);
+        sd.setOrigin(sd.getRadius()*sf::Vector2f(1,1));
+    }
+    stance_dirs[0].setPosition(stances[0].getPosition() + stances[0].getSize().x/2.f*sf::Vector2f(0.707,-0.707));
+    stance_dirs[1].setPosition(stances[1].getPosition() + stances[1].getSize().x/2.f*sf::Vector2f(0.707,0.707));
+    stance_dirs[2].setPosition(stances[2].getPosition() + stances[2].getSize().x/2.f*sf::Vector2f(-0.707,0.707));
+    stance_dirs[3].setPosition(stances[3].getPosition() + stances[3].getSize().x/2.f*sf::Vector2f(-0.707,-0.707));
 
     // Create Lines
     vector<ThickLineSet> tls;
@@ -85,46 +96,59 @@ int main(int argc, char **argv) {
         if(moves[i].end_stance != undefined) {
 
             // Add blue lines for regular same-stance combos
-            if(i%4 < 2 && moves[i+1].end_stance != undefined) tls.push_back(ThickLineSet(moves[i].getCornerOrSide(moves[i+1].getPosition()), moves[i+1].getCornerOrSide(moves[i].getPosition()), t1, t2, sf::Color(0,0,255,opacity)));
+            if(i%4 < 2 && moves[i+1].end_stance != undefined) tls.push_back(ThickLineSet(moves[i].getSide(moves[i+1].getPosition()), moves[i+1].getCorner(moves[i].getPosition()), t1, t2, sf::Color(0,0,255,opacity)));
 
-            // Add blue and yellow lines from stances to first regular attacks and alternate attacks
-            if(i%4 == 0) tls.push_back(ThickLineSet(stances[i/4].getPosition(), moves[i].getCornerOrSide(stances[i/4].getPosition()), t1, t2, sf::Color(0,0,255,opacity)));
-            if(i%4 == 3) tls.push_back(ThickLineSet(stances[i/4].getPosition(), moves[i].getCornerOrSide(stances[i/4].getPosition()), t1, t2, sf::Color(255,255,0,opacity)));
+            // Add blue and yellow lines from neutral to first regular attacks and alternate attacks
+            if(i%4 == 0) tls.push_back(ThickLineSet(stances[fixIndex(i/4)].getPosition(), moves[i].getSide(stances[fixIndex(i/4)].getPosition()), t1, t2, sf::Color(0,0,255,opacity)));
+            if(i%4 == 3) tls.push_back(ThickLineSet(stances[fixIndex(i/4)].getPosition(), moves[i].getSide(stances[fixIndex(i/4)].getPosition()), t1, t2, sf::Color(255,255,0,opacity)));
 
             // Add grey lines for waiting
             if(i%4 < 2 && moves[i+1].end_stance != undefined) {
                 switch(moves[i].end_stance) {
-                    case top_right: tls.push_back(ThickLineSet(moves[i].getCornerOrSide(stances[0].getPosition()), stances[0].getPosition(), t1, t2, sf::Color(200,200,200,opacity))); break;
-                    case bottom_right: tls.push_back(ThickLineSet(moves[i].getCornerOrSide(stances[1].getPosition()), stances[1].getPosition(), t1, t2, sf::Color(200,200,200,opacity))); break;
-                    case bottom_left: tls.push_back(ThickLineSet(moves[i].getCornerOrSide(stances[2].getPosition()), stances[2].getPosition(), t1, t2, sf::Color(200,200,200,opacity))); break;
-                    case top_left: tls.push_back(ThickLineSet(moves[i].getCornerOrSide(stances[3].getPosition()), stances[3].getPosition(), t1, t2, sf::Color(200,200,200,opacity))); break;
+                    case top_right: tls.push_back(ThickLineSet(moves[i].getCorner(stances[0].getPosition()), stances[0].getPosition(), t1, t2, sf::Color(200,200,200,opacity))); break;
+                    case bottom_right: tls.push_back(ThickLineSet(moves[i].getCorner(stances[3].getPosition()), stances[3].getPosition(), t1, t2, sf::Color(200,200,200,opacity))); break;
+                    case bottom_left: tls.push_back(ThickLineSet(moves[i].getCorner(stances[2].getPosition()), stances[2].getPosition(), t1, t2, sf::Color(200,200,200,opacity))); break;
+                    case top_left: tls.push_back(ThickLineSet(moves[i].getCorner(stances[1].getPosition()), stances[1].getPosition(), t1, t2, sf::Color(200,200,200,opacity))); break;
                 }
             }
             // Add blue lines for next stances
             else {
                 switch(moves[i].end_stance) {
-                    case top_right: tls.push_back(ThickLineSet(moves[i].getCornerOrSide(moves[0].getPosition()), moves[0].getCornerOrSide(moves[i].getPosition()), t1, t2, sf::Color(0,0,255,opacity))); break;
-                    case bottom_right: tls.push_back(ThickLineSet(moves[i].getCornerOrSide(moves[12].getPosition()), moves[12].getCornerOrSide(moves[i].getPosition()), t1, t2, sf::Color(0,0,255,opacity))); break;
-                    case bottom_left: tls.push_back(ThickLineSet(moves[i].getCornerOrSide(moves[8].getPosition()), moves[8].getCornerOrSide(moves[i].getPosition()), t1, t2, sf::Color(0,0,255,opacity))); break;
-                    case top_left: tls.push_back(ThickLineSet(moves[i].getCornerOrSide(moves[4].getPosition()), moves[4].getCornerOrSide(moves[i].getPosition()), t1, t2, sf::Color(0,0,255,opacity))); break;
+                    case top_right: tls.push_back(ThickLineSet(moves[i].getSide(moves[0].getPosition()), moves[0].getCornerOrSide(moves[i].getPosition()), t1, t2, sf::Color(0,0,255,opacity))); break;
+                    case bottom_right: tls.push_back(ThickLineSet(moves[i].getSide(moves[12].getPosition()), moves[12].getCornerOrSide(moves[i].getPosition()), t1, t2, sf::Color(0,0,255,opacity))); break;
+                    case bottom_left: tls.push_back(ThickLineSet(moves[i].getSide(moves[8].getPosition()), moves[8].getCornerOrSide(moves[i].getPosition()), t1, t2, sf::Color(0,0,255,opacity))); break;
+                    case top_left: tls.push_back(ThickLineSet(moves[i].getSide(moves[4].getPosition()), moves[4].getCornerOrSide(moves[i].getPosition()), t1, t2, sf::Color(0,0,255,opacity))); break;
                 }
             }
 
             // Add yellow lines to alternate attacks
             switch(moves[i].end_stance) {
-                case top_right: tls.push_back(ThickLineSet(moves[i].getCornerOrSide(moves[3].getPosition()), moves[3].getCornerOrSide(moves[i].getPosition()), t1, t2, col2)); break;
-                case bottom_right: tls.push_back(ThickLineSet(moves[i].getCornerOrSide(moves[15].getPosition()), moves[15].getCornerOrSide(moves[i].getPosition()), t1, t2, col2)); break;
-                case bottom_left: tls.push_back(ThickLineSet(moves[i].getCornerOrSide(moves[11].getPosition()), moves[11].getCornerOrSide(moves[i].getPosition()), t1, t2, col2)); break;
-                case top_left: tls.push_back(ThickLineSet(moves[i].getCornerOrSide(moves[7].getPosition()), moves[7].getCornerOrSide(moves[i].getPosition()), t1, t2, col2)); break;
+                case top_right: tls.push_back(ThickLineSet(moves[i].getSide(moves[3].getPosition()), moves[3].getCornerOrSide(moves[i].getPosition()), t1, t2, col2)); break;
+                case bottom_right: tls.push_back(ThickLineSet(moves[i].getSide(moves[15].getPosition()), moves[15].getCornerOrSide(moves[i].getPosition()), t1, t2, col2)); break;
+                case bottom_left: tls.push_back(ThickLineSet(moves[i].getSide(moves[11].getPosition()), moves[11].getCornerOrSide(moves[i].getPosition()), t1, t2, col2)); break;
+                case top_left: tls.push_back(ThickLineSet(moves[i].getSide(moves[7].getPosition()), moves[7].getCornerOrSide(moves[i].getPosition()), t1, t2, col2)); break;
             }
         }
     }
 
+    // Background Rectangles
+    vector<sf::RectangleShape> back_rects(4, sf::RectangleShape(output_size/2.f));
+    back_rects[0].setPosition(sf::Vector2f(0,0));
+    back_rects[1].setPosition(sf::Vector2f(output_size.x/2.f,0));
+    back_rects[2].setPosition(sf::Vector2f(0,output_size.y/2.f));
+    back_rects[3].setPosition(output_size/2.f);
+    back_rects[0].setFillColor(sf::Color(104,133,121,255));
+    back_rects[1].setFillColor(sf::Color(104,104,104,255));
+    back_rects[2].setFillColor(sf::Color(133,133,121,255));
+    back_rects[3].setFillColor(sf::Color(133,104,104,255));
+
     sf::RenderTexture output;
     output.create(output_size.x,output_size.y);
-    output.clear(sf::Color(111, 126, 121, 255));
+    output.clear(sf::Color(104, 133, 133, 255));
+    for(auto &b: back_rects) output.draw(b);
     for(auto &m: moves) output.draw(m);
     for(auto &s: stances) output.draw(s);
+    for(auto &s: stance_dirs) output.draw(s);
     for(auto &t: tls) output.draw(t);
     output.display();
     output.getTexture().copyToImage().saveToFile("output.png");

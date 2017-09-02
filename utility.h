@@ -3,6 +3,7 @@ using namespace std;
 float dist(const sf::Vector2f&, const sf::Vector2f&);
 float colorDifference(const sf::Color&, const sf::Color&);
 sf::Vector2i scaleVector(const sf::Vector2i&, const sf::Vector2u&);
+int fixIndex(int);
 
 class ThickLine : public sf::RectangleShape {
 private:

@@ -17,6 +17,10 @@ float colorDifference(const sf::Color& c1, const sf::Color& c2) {
 sf::Vector2i scaleVector(const sf::Vector2i& pos_ratio, const sf::Vector2u& image_size) {
     return sf::Vector2i(pos_ratio.x * image_size.x, pos_ratio.y * image_size.y);
 }
+int fixIndex(int i) {
+    if(i == 0) return 0;
+    else return 4-i;
+}
 
 ThickLine::ThickLine() {
 	setSize(sf::Vector2f(1,1));
@@ -64,7 +68,7 @@ void ThickLineSet::update(const sf::Vector2f& aa, const sf::Vector2f& bb) {
     a = aa;
     b = bb;
     lines.clear();
-    float line_count = 20;
+    float line_count = 30;
     sf::Vector2f line_offset = (b - a)/line_count;
     for(float i = 0; i < line_count; i++) {
         lines.push_back(ThickLine(a + i*line_offset, a + (i+1.f)*line_offset, (pow((line_count-i)*thickness1,2.f) + pow(i*thickness2, 2.f))/(4.f*pow(line_count,2.f)), color));

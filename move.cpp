@@ -102,14 +102,25 @@ sf::Vector2f Move::getCornerOrSide(const sf::Vector2f& center) {
     points[5] += sf::Vector2f(texrec.width/2, texrec.height/2);
     points[6] += sf::Vector2f(-texrec.width/2, texrec.height/2);
     points[7] += sf::Vector2f(-texrec.width/2, -texrec.height/2);
-    int min_index = 0;
+    int min_index = 0, min_side_index = 0, min_corner_index = 4;
     float min_dist = dist(center, points[0]);
+    float min_side_dist = dist(center, points[0]);
+    float min_corner_dist = dist(center, points[4]);
     for(int i = 1; i < points.size(); i++) {
         float this_dist = dist(center, points[i]);
         if(this_dist < min_dist) {
             min_dist = this_dist;
             min_index = i;
         }
+        if(i < 4 && this_dist < min_side_dist) {
+            min_side_dist = this_dist;
+            min_side_index = i;
+        }
+        else if(i >= 4 && this_dist < min_corner_dist) {
+            min_corner_dist = this_dist;
+            min_corner_index = i;
+        }
     }
-    return points[min_index];
+    if(min_side_dist < 300) return points[min_side_index];
+    else return points[min_corner_index];
 }
