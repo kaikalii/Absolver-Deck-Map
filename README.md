@@ -1,7 +1,7 @@
 ## Absolver-Deck-Map
 
 # Description
-This is a simple program for use with the game Absolver. It converts 1920x1080 screenshots of the deck editor screen into a map representation so that you can visualize the flow of your combos
+This is a simple program for use with the game Absolver. It converts 1920x1080 screenshots of the deck editor screen into a map representation so that you can visualize the flow of your combos.
 
 # Examples
 You can view some examples [here](https://imgur.com/a/LSNCl).
@@ -13,3 +13,8 @@ You can view some examples [here](https://imgur.com/a/LSNCl).
 4. A window will open showing that status of processing each image.
 5. Once the processing is complete, you may close the window.
 6. You will have a new deck map image in the same folder as each of the screenshots you imported.
+
+# How the Maps Work
+..* **Blue lines** indicate that pressing the **regular attack** button will execute the move being pointed to.
+..* **Yellow lines** indicate that pressing the **alternate attack** button will execute the move being pointed to.
+..* **Grey lines** indicate that **waiting a moment** for your combo to reset will put you in the stance being pointed to.
