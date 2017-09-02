@@ -64,7 +64,7 @@ void ThickLineSet::update(const sf::Vector2f& aa, const sf::Vector2f& bb) {
     a = aa;
     b = bb;
     lines.clear();
-    float line_count = 300;
+    float line_count = 20;
     sf::Vector2f line_offset = (b - a)/line_count;
     for(float i = 0; i < line_count; i++) {
         lines.push_back(ThickLine(a + i*line_offset, a + (i+1.f)*line_offset, (pow((line_count-i)*thickness1,2.f) + pow(i*thickness2, 2.f))/(4.f*pow(line_count,2.f)), color));

@@ -17,14 +17,19 @@ Move::Move(sf::Texture& tex, const sf::IntRect& rect, const sf::Vector2f& pos) {
     sf::Vector2i br_pos(rect.left + 162, rect.top + 70);
     sf::Vector2i bl_pos(rect.left + 149, rect.top + 70);
     sf::Vector2i tl_pos(rect.left + 149, rect.top + 57);
+    sf::Vector2f center_pos(rect.left + rect.width/2, rect.top + rect.height/2);
 
     sf::Color selected(255, 235, 132, 255);
     sf::Color kinda_selected(167, 178, 178, 255);
     sf::Color not_selected(144, 156, 155, 255);
 
+    sf::Color no_move_selected(247, 233, 172, 255);
+    sf::Color no_move_selected2(175, 170, 134, 255);
+
     sf::Image image = tex.copyToImage();
     int m = 20;
-    if(colorDifference(selected, image.getPixel(tr_pos.x, tr_pos.y)) < m || colorDifference(kinda_selected, image.getPixel(tr_pos.x, tr_pos.y)) < m || colorDifference(not_selected, image.getPixel(tr_pos.x, tr_pos.y)) < m) end_stance = top_right;
+    if(colorDifference(no_move_selected, image.getPixel(center_pos.x, center_pos.y)) < m || colorDifference(no_move_selected2, image.getPixel(center_pos.x, center_pos.y)) < m) end_stance = undefined;
+    else if(colorDifference(selected, image.getPixel(tr_pos.x, tr_pos.y)) < m || colorDifference(kinda_selected, image.getPixel(tr_pos.x, tr_pos.y)) < m || colorDifference(not_selected, image.getPixel(tr_pos.x, tr_pos.y)) < m) end_stance = top_right;
     else if(colorDifference(selected, image.getPixel(br_pos.x, br_pos.y)) < m || colorDifference(kinda_selected, image.getPixel(br_pos.x, br_pos.y)) < m || colorDifference(not_selected, image.getPixel(br_pos.x, br_pos.y)) < m) end_stance = bottom_right;
     else if(colorDifference(selected, image.getPixel(bl_pos.x, bl_pos.y)) < m || colorDifference(kinda_selected, image.getPixel(bl_pos.x, bl_pos.y)) < m || colorDifference(not_selected, image.getPixel(bl_pos.x, bl_pos.y)) < m) end_stance = bottom_left;
     else if(colorDifference(selected, image.getPixel(tl_pos.x, tl_pos.y)) < m || colorDifference(kinda_selected, image.getPixel(tl_pos.x, tl_pos.y)) < m || colorDifference(not_selected, image.getPixel(tl_pos.x, tl_pos.y)) < m) end_stance = top_left;
@@ -34,11 +39,11 @@ Move::Move(sf::Texture& tex, const sf::IntRect& rect, const sf::Vector2f& pos) {
     else if(end_stance == bottom_right) cout << "Move ends in bottom right" << endl;
     else if(end_stance == bottom_left) cout << "Move ends in bottom left" << endl;
     else if(end_stance == top_left) cout << "Move ends in top left" << endl;
-    else if(end_stance == undefined) cout << "Move's end stance could not be determined" << endl;
+    else if(end_stance == undefined) cout << "Move has no end stance or move's end stance could not be determined" << endl;
 }
 
 void Move::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-    target.draw(sprite);
+    if(end_stance != undefined) target.draw(sprite);
 }
 
 void Move::setPosition(const sf::Vector2f& pos) {
@@ -65,4 +70,46 @@ sf::Vector2f Move::getCorner(const sf::Vector2f& center) {
         }
     }
     return corners[min_index];
+}
+
+sf::Vector2f Move::getSide(const sf::Vector2f& center) {
+    auto texrec = sprite.getTextureRect();
+    vector<sf::Vector2f> sides(4, getPosition());
+    sides[0] += sf::Vector2f(0, -texrec.height/2);
+    sides[1] += sf::Vector2f(texrec.width/2, 0);
+    sides[2] += sf::Vector2f(0, texrec.height/2);
+    sides[3] += sf::Vector2f(-texrec.width/2, 0);
+    int min_index = 0;
+    float min_dist = dist(center, sides[0]);
+    for(int i = 1; i < sides.size(); i++) {
+        float this_dist = dist(center, sides[i]);
+        if(this_dist < min_dist) {
+            min_dist = this_dist;
+            min_index = i;
+        }
+    }
+    return sides[min_index];
+}
+
+sf::Vector2f Move::getCornerOrSide(const sf::Vector2f& center) {
+    auto texrec = sprite.getTextureRect();
+    vector<sf::Vector2f> points(8, getPosition());
+    points[0] += sf::Vector2f(0, -texrec.height/2);
+    points[1] += sf::Vector2f(texrec.width/2, 0);
+    points[2] += sf::Vector2f(0, texrec.height/2);
+    points[3] += sf::Vector2f(-texrec.width/2, 0);
+    points[4] += sf::Vector2f(texrec.width/2, -texrec.height/2);
+    points[5] += sf::Vector2f(texrec.width/2, texrec.height/2);
+    points[6] += sf::Vector2f(-texrec.width/2, texrec.height/2);
+    points[7] += sf::Vector2f(-texrec.width/2, -texrec.height/2);
+    int min_index = 0;
+    float min_dist = dist(center, points[0]);
+    for(int i = 1; i < points.size(); i++) {
+        float this_dist = dist(center, points[i]);
+        if(this_dist < min_dist) {
+            min_dist = this_dist;
+            min_index = i;
+        }
+    }
+    return points[min_index];
 }
